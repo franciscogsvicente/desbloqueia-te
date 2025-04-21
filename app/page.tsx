@@ -4,6 +4,7 @@ import Image from "next/image"
 import { CountdownTimer } from "@/components/countdown-timer"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { ContactButton } from "@/components/contact-button"
 
 export default function LandingPage() {
   return (
@@ -27,6 +28,9 @@ export default function LandingPage() {
             <Link href="#para-quem" className="text-sm font-medium hover:underline underline-offset-4">
               Para Quem
             </Link>
+            <Link href="#sobre-mim" className="text-sm font-medium hover:underline underline-offset-4">
+              Sobre Mim
+            </Link>
             <Link href="#faq" className="text-sm font-medium hover:underline underline-offset-4">
               FAQ
             </Link>
@@ -46,15 +50,18 @@ export default function LandingPage() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-pink-800">
-                  Clube do Livro Desbloqueia-te
-                </h1>
-                <p className="text-xl text-gray-600">Lê, desbloqueia e transforma-te.</p>
-                <p className="text-gray-500 md:text-lg">
+                <div className="flex flex-col items-center lg:items-start">
+                  <BookOpen className="h-16 w-16 text-pink-600 mb-4" />
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-pink-800 text-center lg:text-left">
+                    Clube do Livro Desbloqueia-te
+                  </h1>
+                </div>
+                <p className="text-xl text-gray-600 text-center lg:text-left">Lê, desbloqueia e transforma-te.</p>
+                <p className="text-gray-500 md:text-lg text-center lg:text-left">
                   Um clube de leitura para mulheres que querem evoluir, pensar diferente e começar uma nova fase na vida
                   — através do poder de um bom livro.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button className="bg-pink-600 hover:bg-pink-700 text-lg py-6" asChild>
                     <Link href="https://pay.hotmart.com/F99306857M" target="_blank">
                       Quero Entrar no Clube
@@ -228,49 +235,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="precos" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">💰 Investimento</h2>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-3xl gap-8 py-12 md:grid-cols-2">
-              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 shadow-sm">
-                <div className="rounded-full bg-pink-100 p-3">
-                  <Clock className="h-6 w-6 text-pink-600" />
-                </div>
-                <h3 className="text-xl font-bold">🕰️ Pré-venda especial</h3>
-                <p className="text-center text-gray-600">21 a 24 de abril</p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-3xl font-bold">147€</span>
-                </div>
-                <Button className="w-full bg-pink-600 hover:bg-pink-700" asChild>
-                  <Link href="https://pay.hotmart.com/F99306857M" target="_blank">
-                    Quero Entrar no Clube
-                  </Link>
-                </Button>
-              </div>
-              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 shadow-sm">
-                <div className="rounded-full bg-pink-100 p-3">
-                  <Clock className="h-6 w-6 text-pink-600" />
-                </div>
-                <h3 className="text-xl font-bold">🔒 Após pré-venda</h3>
-                <p className="text-center text-gray-600">25 a 30 de abril</p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-3xl font-bold">197€</span>
-                </div>
-                <Button className="w-full" variant="outline">
-                  Disponível em breve
-                </Button>
-              </div>
-            </div>
-            <div className="text-center text-sm text-gray-600 mt-4">
-              <p>📌 As inscrições fecham no dia 30 de abril. Depois disso, não será possível entrar nesta edição.</p>
-            </div>
-          </div>
-        </section>
-
         <section id="para-quem" className="w-full py-12 md:py-24 lg:py-32 bg-pink-50">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -313,6 +277,97 @@ export default function LandingPage() {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="sobre-mim" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">👋 Sobre Mim</h2>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl gap-12 py-8 md:grid-cols-2 items-center">
+              <div className="flex justify-center">
+                <Image
+                  src="/images/profile-photo.png"
+                  alt="Foto da criadora do Clube do Livro"
+                  width={350}
+                  height={450}
+                  className="rounded-lg shadow-xl object-cover"
+                />
+              </div>
+              <div className="space-y-6 text-gray-600">
+                <p className="leading-relaxed">
+                  Durante muito tempo eu quis mudar a minha vida…
+                  <br />
+                  Tinha mil sonhos, metas, vontade de ser mais disciplinada…
+                  <br />
+                  Mas sentia-me sempre perdida, desconectada de mim mesma.
+                </p>
+                <p className="leading-relaxed">
+                  Até que, num momento em que tudo parecia estagnado, eu abri um livro…
+                  <br />E ali começou a minha virada.
+                </p>
+                <p className="leading-relaxed">
+                  A leitura tornou-se o meu ponto de equilíbrio, o meu momento de clareza.
+                  <br />E mais do que isso: ajudou-me a criar novos hábitos, desenvolver autoconhecimento e mudar de
+                  dentro pra fora.
+                </p>
+                <p className="leading-relaxed">
+                  Criei o Clube do Livro porque sei que existem muitas outras mulheres como eu era: cheias de vontade,
+                  mas sem saber por onde começar.
+                </p>
+                <p className="leading-relaxed font-medium text-pink-700">
+                  E agora quero caminhar contigo.
+                  <br />
+                  Porque juntas, a transformação vai muito além dos livros 💖
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="precos" className="w-full py-12 md:py-24 lg:py-32 bg-pink-50">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">💰 Investimento</h2>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-3xl gap-8 py-12 md:grid-cols-2">
+              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 shadow-sm">
+                <div className="rounded-full bg-pink-100 p-3">
+                  <Clock className="h-6 w-6 text-pink-600" />
+                </div>
+                <h3 className="text-xl font-bold">🕰️ Pré-venda especial</h3>
+                <p className="text-center text-gray-600">21 a 24 de abril</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-3xl font-bold">147€</span>
+                </div>
+                <Button className="w-full bg-pink-600 hover:bg-pink-700" asChild>
+                  <Link href="https://pay.hotmart.com/F99306857M" target="_blank">
+                    Quero Entrar no Clube
+                  </Link>
+                </Button>
+              </div>
+              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 shadow-sm">
+                <div className="rounded-full bg-pink-100 p-3">
+                  <Clock className="h-6 w-6 text-pink-600" />
+                </div>
+                <h3 className="text-xl font-bold">🔒 Após pré-venda</h3>
+                <p className="text-center text-gray-600">25 a 30 de abril</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-3xl font-bold">197€</span>
+                </div>
+                <Button className="w-full" variant="outline">
+                  Disponível em breve
+                </Button>
+              </div>
+            </div>
+            <div className="text-center text-sm text-gray-600 mt-4">
+              <p>📌 As inscrições fecham no dia 30 de abril. Depois disso, não será possível entrar nesta edição.</p>
             </div>
           </div>
         </section>
@@ -597,6 +652,7 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+      <ContactButton />
     </div>
   )
 }
@@ -638,6 +694,9 @@ function MobileNav() {
           </Link>
           <Link href="#para-quem" className="text-lg font-medium hover:underline underline-offset-4">
             Para Quem
+          </Link>
+          <Link href="#sobre-mim" className="text-lg font-medium hover:underline underline-offset-4">
+            Sobre Mim
           </Link>
           <Link href="#faq" className="text-lg font-medium hover:underline underline-offset-4">
             FAQ
