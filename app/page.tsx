@@ -87,7 +87,7 @@ export default function LandingPage() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">Oferta Especial por Tempo Limitado</h2>
-                <p className="text-gray-600">Pré-venda especial termina em:</p>
+                <p className="text-gray-600">As inscrições encerram em:</p>
               </div>
               <CountdownTimer targetDate="2025-04-30T23:59:59" />
               <div className="flex flex-col gap-2 mt-4">
@@ -367,7 +367,10 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="text-center text-sm text-gray-600 mt-4">
-              <p>📌 As inscrições fecham no dia 30 de abril. Depois disso, não será possível entrar nesta edição.</p>
+              <p>
+                📌 As inscrições fecham definitivamente no dia 30 de abril. Depois disso, não será possível entrar nesta
+                edição.
+              </p>
             </div>
           </div>
         </section>
