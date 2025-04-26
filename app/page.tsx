@@ -89,7 +89,7 @@ export default function LandingPage() {
                 <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">Oferta Especial por Tempo Limitado</h2>
                 <p className="text-gray-600">Pré-venda especial termina em:</p>
               </div>
-              <CountdownTimer targetDate="2025-04-24T23:59:59" />
+              <CountdownTimer targetDate="2025-04-30T23:59:59" />
               <div className="flex flex-col gap-2 mt-4">
                 <div className="flex items-center justify-center gap-2">
                   <Clock className="h-5 w-5 text-pink-600" />
